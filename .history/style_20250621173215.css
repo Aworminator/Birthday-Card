@@ -1,0 +1,70 @@
+.card {
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius:20px;
+    box-shadow: 5px 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+.fa-pause,
+.fa-play {
+    font-size: 2em;
+    position: relative;
+    right: 40px;
+}
+
+.fa-play:active {
+    font-size: 2em;
+    position: relative;
+    right: 40px;
+    transform: scale(0.8);
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+}
+
+.progress-bar {
+    background-color: white;
+    border-radius: 40px;
+    color: black;
+    width: 150px;
+    height: 12px;
+    border: 1px solid rgb(221, 144, 99);
+
+}
+
+.progress {
+    background-color: rgb(244, 164, 117);
+    border-radius: 40px;
+    height: 100%;
+    width: 50%;
+
+}
+
+

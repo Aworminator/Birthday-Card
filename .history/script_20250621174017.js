@@ -1,15 +1,9 @@
 let name = "Matthew";
 
-let people = [
-  {
+let person = {
     name: "Matthew",
-    audioTitle: "perry-sound.mp3",
-  },
-  {
-    name: "Sarah",
-    audioTitle: "perry-sound.mp3",
-  },
-];
+    audioTitle: "happy-birthday-song.mp3"
+};
 
 let header = document.getElementById("name");
 let audio = document.getElementById("audio");
@@ -65,16 +59,3 @@ function pauseAudio() {
 audio.addEventListener("timeupdate", updateProgress);
 
 progress.addEventListener("click", setProgress);
-
-people.map((person) => {
-  `<div class="card">
-            <h1 id="name">${person.name}</h1>
-            <img src="./images/Driving Crooner Matt.png" alt="">
-            <div class="player">
-            <i class="fa-solid fa-play" id="playBtn" onclick="playAudio()"><audio preload="metadata" id="audio" src="./audio/${person.audioTitle}"></audio></i>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
-        </div>`;
-});

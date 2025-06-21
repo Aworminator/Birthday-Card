@@ -3,11 +3,11 @@ let name = "Matthew";
 let people = [
   {
     name: "Matthew",
-    audioTitle: "perry-sound.mp3",
+    audioTitle: "/Users/alecgarnica/Dropbox/Bulldog 4 11.wav",
   },
   {
     name: "Sarah",
-    audioTitle: "perry-sound.mp3",
+    audioTitle: "celebration-song.mp3",
   },
 ];
 
@@ -65,16 +65,3 @@ function pauseAudio() {
 audio.addEventListener("timeupdate", updateProgress);
 
 progress.addEventListener("click", setProgress);
-
-people.map((person) => {
-  `<div class="card">
-            <h1 id="name">${person.name}</h1>
-            <img src="./images/Driving Crooner Matt.png" alt="">
-            <div class="player">
-            <i class="fa-solid fa-play" id="playBtn" onclick="playAudio()"><audio preload="metadata" id="audio" src="./audio/${person.audioTitle}"></audio></i>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
-        </div>`;
-});

@@ -66,8 +66,9 @@ audio.addEventListener("timeupdate", updateProgress);
 
 progress.addEventListener("click", setProgress);
 
-people.map((person) => {
-  `<div class="card">
+
+people.map( person => {
+    `<div class="card">
             <h1 id="name">${person.name}</h1>
             <img src="./images/Driving Crooner Matt.png" alt="">
             <div class="player">
@@ -76,5 +77,5 @@ people.map((person) => {
                 <div class="progress"></div>
             </div>
         </div>
-        </div>`;
-});
+        </div>`
+})
