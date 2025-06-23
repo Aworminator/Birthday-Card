@@ -1,0 +1,97 @@
+.card {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 10px;
+  margin: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
+}
+
+#input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-pic {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.fa-pause,
+.fa-play {
+  font-size: 2em;
+  position: relative;
+  right: 12px;
+}
+
+.fa-play:active {
+  font-size: 2em;
+  position: relative;
+  transform: scale(0.8);
+}
+
+.player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+}
+
+.progress-bar {
+  background-color: white;
+  border-radius: 40px;
+  color: black;
+  width: 150px;
+  height: 12px;
+  border: 1px solid rgb(221, 144, 99);
+}
+
+.progress {
+  background-color: rgb(244, 164, 117);
+  border-radius: 40px;
+  height: 100%;
+  width: 0%;
+}
+
+.group {
+  position: relative;
+}
+
+.balloons {
+  height: 400px;
+  position: absolute; /* Updated to move relative to .card */
+  top: 0; /* Aligns with the top of .card */
+  left: -40; /* Aligns with the left of .card */
+  z-index: -1; /* Ensures .balloons is always on top of .card */
+  opacity: 20%;
+}
+
+@media screen and (min-width: 768px) {
+  #input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  body {
+    width: 100%;
+    transform: scale(0.9);
+  }
+}
