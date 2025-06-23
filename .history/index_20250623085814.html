@@ -15,14 +15,23 @@
   </head>
   <body>
     <div class="container">
-      <div class="group">
-        <img
-          class="balloons"
-          src="https://www.pngarts.com/files/4/Colorful-Balloons-PNG-Image-Background.png"
-          alt="balloon decoration"
-        />
-        <div id="input"></div>
+      <div class="card">
+        <h1 id="name">Name</h1>
+        <img src="./images/Driving Crooner Matt.png" alt="" />
+        <div class="player">
+          <i class="fa-solid fa-play" id="playBtn" onclick="playAudio()"
+            ><audio
+              preload="metadata"
+              id="audio"
+              src="./audio/perry-sound.mp3"
+            ></audio
+          ></i>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
       </div>
+      <div id="input"></div>
     </div>
 
     <script src="script.js"></script>

@@ -18,9 +18,7 @@ let input = document.querySelector("#input");
 function updateProgress(e, personName) {
   let { currentTime, duration } = e.srcElement;
   const progressPercentage = (currentTime / duration) * 100;
-  document.getElementById(
-    `progress-${personName}`
-  ).style.width = `${progressPercentage}%`;
+  document.getElementById(`progress-${personName}`).style.width = `${progressPercentage}%`;
 
   const playBtn = document.getElementById(`playBtn-${personName}`);
   if (currentTime === duration) {
@@ -56,7 +54,7 @@ people.forEach((person) => {
   card.classList.add("card");
   card.innerHTML = `
             <h1 id="name">${person.name}</h1>
-            <img class="card-pic" src="./images/Driving Crooner Matt.png" alt="">
+            <img src="./images/Driving Crooner Matt.png" alt="">
             <div class="player">
             <i class="fa-solid fa-play" id="playBtn-${person.name}" onclick="toggleAudio('${person.name}')">
             <audio preload="metadata" id="audio-${person.name}" src="./audio/${person.audioTitle}"></audio></i>
@@ -75,10 +73,10 @@ people.forEach((person) => {
 });
 
 function toggleAudio(personName) {
-  const audio = document.getElementById(`audio-${personName}`);
   const playBtn = document.getElementById(`playBtn-${personName}`);
+  const isPlaying = playBtn.classList.contains("fa-play");
 
-  if (audio.paused || audio.ended) {
+  if (isPlaying) {
     playAudio(personName);
     playBtn.classList.remove("fa-play");
     playBtn.classList.add("fa-pause");

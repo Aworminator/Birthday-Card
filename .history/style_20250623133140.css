@@ -70,17 +70,13 @@ h1 {
   width: 0%;
 }
 
-.group {
-  position: relative;
-}
-
 .balloons {
   height: 400px;
-  position: absolute; /* Updated to move relative to .card */
-  top: 0; /* Aligns with the top of .card */
-  left: -40; /* Aligns with the left of .card */
-  z-index: -1; /* Ensures .balloons is always on top of .card */
-  opacity: 20%;
+  width: 100%;
+  /* position: relative;
+  left: 100%;
+  z-index: -1;
+  opacity: 20%; */
 }
 
 @media screen and (min-width: 768px) {

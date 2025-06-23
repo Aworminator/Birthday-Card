@@ -15,7 +15,7 @@ let people = [
 
 let input = document.querySelector("#input");
 
-function updateProgress(e, personName) {
+function updateProgress(e) {
   let { currentTime, duration } = e.srcElement;
   const progressPercentage = (currentTime / duration) * 100;
   document.getElementById(
@@ -32,7 +32,7 @@ function updateProgress(e, personName) {
   }
 }
 
-function setProgress(e, personName) {
+function setProgress(e) {
   const width = e.currentTarget.clientWidth;
   const clickX = e.offsetX;
   const audio = document.getElementById(`audio-${personName}`);
@@ -41,12 +41,12 @@ function setProgress(e, personName) {
   audio.currentTime = (clickX / width) * duration;
 }
 
-function playAudio(personName) {
+function playAudio() {
   const audio = document.getElementById(`audio-${personName}`);
   audio.play();
 }
 
-function pauseAudio(personName) {
+function pauseAudio() {
   const audio = document.getElementById(`audio-${personName}`);
   audio.pause();
 }
@@ -74,16 +74,16 @@ people.forEach((person) => {
   progressBar.addEventListener("click", (e) => setProgress(e, person.name));
 });
 
-function toggleAudio(personName) {
-  const audio = document.getElementById(`audio-${personName}`);
+function toggleAudio() {
   const playBtn = document.getElementById(`playBtn-${personName}`);
+  const isPlaying = playBtn.classList.contains("fa-play");
 
-  if (audio.paused || audio.ended) {
-    playAudio(personName);
+  if (isPlaying) {
+    playAudio();
     playBtn.classList.remove("fa-play");
     playBtn.classList.add("fa-pause");
   } else {
-    pauseAudio(personName);
+    pauseAudio();
     playBtn.classList.remove("fa-pause");
     playBtn.classList.add("fa-play");
   }

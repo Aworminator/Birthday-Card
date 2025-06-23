@@ -75,10 +75,10 @@ people.forEach((person) => {
 });
 
 function toggleAudio(personName) {
-  const audio = document.getElementById(`audio-${personName}`);
   const playBtn = document.getElementById(`playBtn-${personName}`);
+  const isPlaying = playBtn.classList.contains("fa-play");
 
-  if (audio.paused || audio.ended) {
+  if (isPlaying) {
     playAudio(personName);
     playBtn.classList.remove("fa-play");
     playBtn.classList.add("fa-pause");

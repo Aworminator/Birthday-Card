@@ -9,7 +9,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 }
 
 h1 {
@@ -27,7 +26,7 @@ h1 {
   justify-content: center;
 }
 
-.card-pic {
+img {
   height: 150px;
   width: 150px;
   object-fit: cover;
@@ -44,6 +43,7 @@ h1 {
 .fa-play:active {
   font-size: 2em;
   position: relative;
+  right: 40px;
   transform: scale(0.8);
 }
 
@@ -70,28 +70,13 @@ h1 {
   width: 0%;
 }
 
-.group {
-  position: relative;
-}
-
-.balloons {
-  height: 400px;
-  position: absolute; /* Updated to move relative to .card */
-  top: 0; /* Aligns with the top of .card */
-  left: -40; /* Aligns with the left of .card */
-  z-index: -1; /* Ensures .balloons is always on top of .card */
-  opacity: 20%;
-}
-
 @media screen and (min-width: 768px) {
   #input {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
   }
 
   body {
-    width: 100%;
-    transform: scale(0.9);
+    width: 100vh;
   }
 }

@@ -13,7 +13,32 @@ let people = [
   },
 ];
 
+// Select the #input container where cards will be added
 let input = document.querySelector("#input");
+
+people.forEach((person) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+    <h1 id="name">${person.name}</h1>
+    <img src="./images/Driving Crooner Matt.png" alt="${person.name}">
+    <div class="player">
+      <i class="fa-solid fa-play" id="playBtn-${person.name}" onclick="toggleAudio('${person.name}')">
+        <audio preload="metadata" id="audio-${person.name}" src="./audio/${person.audioTitle}"></audio>
+      </i>
+      <div class="progress-bar" id="progress-bar-${person.name}">
+        <div class="progress" id="progress-${person.name}"></div>
+      </div>
+    </div>
+  `;
+  input.appendChild(card);
+
+  const audio = document.getElementById(`audio-${person.name}`);
+  const progressBar = document.getElementById(`progress-bar-${person.name}`);
+
+  audio.addEventListener("timeupdate", (e) => updateProgress(e, person.name));
+  progressBar.addEventListener("click", (e) => setProgress(e, person.name));
+});
 
 function updateProgress(e, personName) {
   let { currentTime, duration } = e.srcElement;
@@ -51,34 +76,11 @@ function pauseAudio(personName) {
   audio.pause();
 }
 
-people.forEach((person) => {
-  const card = document.createElement("div");
-  card.classList.add("card");
-  card.innerHTML = `
-            <h1 id="name">${person.name}</h1>
-            <img class="card-pic" src="./images/Driving Crooner Matt.png" alt="">
-            <div class="player">
-            <i class="fa-solid fa-play" id="playBtn-${person.name}" onclick="toggleAudio('${person.name}')">
-            <audio preload="metadata" id="audio-${person.name}" src="./audio/${person.audioTitle}"></audio></i>
-            <div class="progress-bar" id="progress-bar-${person.name}">
-                <div class="progress" id="progress-${person.name}"></div>
-            </div>
-        </div>
-        </div>`;
-  input.appendChild(card);
-
-  const audio = document.getElementById(`audio-${person.name}`);
-  const progressBar = document.getElementById(`progress-bar-${person.name}`);
-
-  audio.addEventListener("timeupdate", (e) => updateProgress(e, person.name));
-  progressBar.addEventListener("click", (e) => setProgress(e, person.name));
-});
-
 function toggleAudio(personName) {
-  const audio = document.getElementById(`audio-${personName}`);
   const playBtn = document.getElementById(`playBtn-${personName}`);
+  const isPlaying = playBtn.classList.contains("fa-play");
 
-  if (audio.paused || audio.ended) {
+  if (isPlaying) {
     playAudio(personName);
     playBtn.classList.remove("fa-play");
     playBtn.classList.add("fa-pause");
