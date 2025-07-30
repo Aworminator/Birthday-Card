@@ -55,7 +55,7 @@ people.forEach((person) => {
   const card = document.createElement("div");
   card.classList.add("card");
   card.innerHTML = `
-  
+  <img class="decor" src="https://www.pngarts.com/files/4/Colorful-Balloons-PNG-Image-Background.png" alt="Balloons" />
             <h1 id="name">${person.name}</h1>
             <img class="card-pic" src="./images/Driving Crooner Matt.png" alt="">
             <div class="player">
@@ -89,5 +89,3 @@ function toggleAudio(personName) {
     playBtn.classList.add("fa-play");
   }
 }
-
-c

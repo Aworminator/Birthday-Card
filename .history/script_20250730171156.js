@@ -89,5 +89,3 @@ function toggleAudio(personName) {
     playBtn.classList.add("fa-play");
   }
 }
-
-c

@@ -12,16 +12,7 @@
   z-index: 1;
 }
 
-.background-balloon {
-  position: fixed;
-  transform: scale(2.9);
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.2;
-  pointer-events: none;
-  overflow: hidden;
-}
+
 
 h1 {
   text-align: center;
@@ -83,6 +74,15 @@ h1 {
 
 .group {
   position: relative;
+}
+
+.balloons {
+  height: 400px;
+  position: absolute; /* Updated to move relative to .card */
+  top: 0; /* Aligns with the top of .card */
+  left: -40; /* Aligns with the left of .card */
+  z-index: -1; /* Ensures .balloons is always on top of .card */
+  opacity: 20%;
 }
 
 @media screen and (min-width: 768px) {

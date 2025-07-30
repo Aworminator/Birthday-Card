@@ -12,9 +12,11 @@
   z-index: 1;
 }
 
+/* Full-page background balloon layer */
 .background-balloon {
   position: fixed;
-  transform: scale(2.9);
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: -1;
@@ -22,7 +24,6 @@
   pointer-events: none;
   overflow: hidden;
 }
-
 h1 {
   text-align: center;
 }
