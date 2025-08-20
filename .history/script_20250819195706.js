@@ -7,17 +7,17 @@ let people = [
   {
     name: "Zach Scally",
     picture: "./images/Zach.jpg",
-    audioTitle: "Zach.m4a",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Alec Garnica",
     picture: "./images/Alec.jpg",
-    audioTitle: "Alec.m4a",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "John Oliver",
     picture: "./images/John.jpg",
-    audioTitle: "John.m4a",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Kohlby Hassleman",
@@ -27,18 +27,14 @@ let people = [
   {
     name: "Tyler Moore",
     picture: "./images/Tyler.jpg",
-    audioTitle: "Tyler.m4a",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Jeremiah Grabau",
-    picture: "./images/Jeremiah.jpeg",
+    picture: "./images/Jeremiah.jpg",
     audioTitle: "perry-sound.mp3",
   },
-  {
-    name: "Spencer Brenard",
-    picture: "./images/Spencer.png",
-    audioTitle: "perry-sound.mp3",
-  },
+
 ];
 
 let input = document.querySelector("#input");
@@ -51,10 +47,12 @@ function updateProgress(e, personName) {
   ).style.width = `${progressPercentage}%`;
 
   const playBtn = document.getElementById(`playBtn-${personName}`);
-  // Only change the button state when the audio has ended
   if (currentTime === duration) {
     playBtn.classList.add("fa-play");
     playBtn.classList.remove("fa-pause");
+  } else {
+    playBtn.classList.add("fa-pause");
+    playBtn.classList.remove("fa-play");
   }
 }
 
@@ -67,23 +65,7 @@ function setProgress(e, personName) {
   audio.currentTime = (clickX / width) * duration;
 }
 
-function pauseAllAudio() {
-  people.forEach((person) => {
-    const audio = document.getElementById(`audio-${person.name}`);
-    const playBtn = document.getElementById(`playBtn-${person.name}`);
-
-    if (!audio.paused) {
-      audio.pause();
-      playBtn.classList.remove("fa-pause");
-      playBtn.classList.add("fa-play");
-    }
-  });
-}
-
 function playAudio(personName) {
-  // Pause all other audio first
-  pauseAllAudio();
-
   const audio = document.getElementById(`audio-${personName}`);
   audio.play();
 }
@@ -160,24 +142,4 @@ function createBalloon() {
 }
 
 // Keep spawning balloons
-let balloonInterval = setInterval(createBalloon, 1200); // every ~1.2 seconds
-
-// Mobile scroll-based balloon creation
-let lastScrollY = 0;
-let balloonScrollThreshold = 200; // Create balloon every 200px of scroll
-
-function handleMobileScroll() {
-  // Check if mobile (768px or less)
-  if (window.innerWidth <= 768) {
-    const currentScrollY = window.scrollY;
-
-    // Check if scrolled down enough to trigger new balloons
-    if (Math.abs(currentScrollY - lastScrollY) >= balloonScrollThreshold) {
-      createBalloon();
-      lastScrollY = currentScrollY;
-    }
-  }
-}
-
-// Add scroll listener for mobile balloon creation
-window.addEventListener("scroll", handleMobileScroll);
+setInterval(createBalloon, 1200); // every ~1.2 seconds

@@ -81,6 +81,41 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
   }
+
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 95vw;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .player {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .progress-bar {
+    width: 100px;
+    height: 10px;
+  }
+
+  #input {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Balloon styles */

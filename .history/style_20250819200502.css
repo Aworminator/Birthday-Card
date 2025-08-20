@@ -83,6 +83,11 @@ h1 {
   }
 }
 
+@media screen and (max-width: 480px) {
+  
+  
+}
+
 /* Balloon styles */
 .balloon {
   position: absolute;

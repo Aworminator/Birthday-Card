@@ -83,6 +83,7 @@ h1 {
   }
 }
 
+
 /* Balloon styles */
 .balloon {
   position: absolute;
@@ -112,6 +113,25 @@ h1 {
   }
   100% {
     transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Mobile specific balloon positioning */
+@media screen and (max-width: 480px) {
+  .balloon {
+    bottom: -2000px !important; /* start even lower on mobile */
+    animation: floatUpMobile linear forwards;
+  }
+}
+
+@keyframes floatUpMobile {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-150vh) scale(1.2); /* travel further on mobile */
     opacity: 0;
   }
 }

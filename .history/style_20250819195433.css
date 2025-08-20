@@ -12,6 +12,7 @@
   z-index: 1;
 }
 
+
 h1 {
   text-align: center;
 }
@@ -20,12 +21,12 @@ h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  
 }
 
 .card-pic {
@@ -80,6 +81,11 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+
+  body {
+    width: 100%;
+    transform: scale(0.9);
   }
 }
 

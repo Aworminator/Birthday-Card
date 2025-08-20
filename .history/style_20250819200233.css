@@ -81,7 +81,10 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
   }
+
 }
+
+
 
 /* Balloon styles */
 .balloon {

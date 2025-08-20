@@ -115,3 +115,10 @@ h1 {
     opacity: 0;
   }
 }
+
+/* Mobile styles - make balloons repeat */
+@media screen and (max-width: 767px) {
+  .balloon {
+    animation: floatUp linear infinite;
+  }
+}

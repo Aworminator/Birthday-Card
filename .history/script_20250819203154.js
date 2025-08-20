@@ -17,7 +17,7 @@ let people = [
   {
     name: "John Oliver",
     picture: "./images/John.jpg",
-    audioTitle: "John.m4a",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Kohlby Hassleman",
@@ -27,7 +27,7 @@ let people = [
   {
     name: "Tyler Moore",
     picture: "./images/Tyler.jpg",
-    audioTitle: "Tyler.m4a",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Jeremiah Grabau",
@@ -67,23 +67,7 @@ function setProgress(e, personName) {
   audio.currentTime = (clickX / width) * duration;
 }
 
-function pauseAllAudio() {
-  people.forEach((person) => {
-    const audio = document.getElementById(`audio-${person.name}`);
-    const playBtn = document.getElementById(`playBtn-${person.name}`);
-
-    if (!audio.paused) {
-      audio.pause();
-      playBtn.classList.remove("fa-pause");
-      playBtn.classList.add("fa-play");
-    }
-  });
-}
-
 function playAudio(personName) {
-  // Pause all other audio first
-  pauseAllAudio();
-
   const audio = document.getElementById(`audio-${personName}`);
   audio.play();
 }

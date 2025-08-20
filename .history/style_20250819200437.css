@@ -83,6 +83,24 @@ h1 {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .balloon {
+    bottom: -5000px;
+  }
+
+  @keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-400vh) scale(1.2);
+    opacity: 0;
+  }
+}
+  
+}
+
 /* Balloon styles */
 .balloon {
   position: absolute;

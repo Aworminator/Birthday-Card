@@ -71,7 +71,7 @@ function pauseAllAudio() {
   people.forEach((person) => {
     const audio = document.getElementById(`audio-${person.name}`);
     const playBtn = document.getElementById(`playBtn-${person.name}`);
-
+    
     if (!audio.paused) {
       audio.pause();
       playBtn.classList.remove("fa-pause");
@@ -83,7 +83,7 @@ function pauseAllAudio() {
 function playAudio(personName) {
   // Pause all other audio first
   pauseAllAudio();
-
+  
   const audio = document.getElementById(`audio-${personName}`);
   audio.play();
 }

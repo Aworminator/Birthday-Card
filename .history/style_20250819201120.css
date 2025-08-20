@@ -115,3 +115,22 @@ h1 {
     opacity: 0;
   }
 }
+
+/* Mobile specific balloon positioning */
+@media screen and (max-width: 480px) {
+  .balloon {
+    bottom: -2000px !important; /* start even lower on mobile */
+    animation: floatUpMobile 6s linear forwards; /* 8 second duration for slower animation */
+  }
+}
+
+@keyframes floatUpMobile {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-2000vh) scale(1.2); /* travel further on mobile */
+    opacity: 0;
+  }
+}

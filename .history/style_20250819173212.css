@@ -12,6 +12,17 @@
   z-index: 1;
 }
 
+.background-balloon {
+  position: fixed;
+  transform: scale(2.9);
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 h1 {
   text-align: center;
 }
@@ -20,7 +31,6 @@ h1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .container {
@@ -81,28 +91,22 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
   }
+
+  body {
+    width: 100%;
+    transform: scale(0.9);
+  }
 }
 
 /* Balloon styles */
 .balloon {
   position: absolute;
-  bottom: -300px; /* start below screen */
+  bottom: -150px; /* start below screen */
   border-radius: 50%;
   opacity: 0.8;
   pointer-events: none;
   z-index: 0;
   animation: floatUp linear forwards;
-}
-
-.balloon::after {
-  content: "";
-  position: absolute;
-  top: 100%; /* starts at bottom of balloon */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 40px; /* string length */
-  background: rgba(0, 0, 0, 0.3); /* light gray string */
 }
 
 @keyframes floatUp {
