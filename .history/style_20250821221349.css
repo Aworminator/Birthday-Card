@@ -114,8 +114,9 @@ h1 {
   }
 
   .birthday-header {
+    position: relative;
+    left: 37%;
     height: 350px;
-    width: 525px;
   }
 
   .jacob {
