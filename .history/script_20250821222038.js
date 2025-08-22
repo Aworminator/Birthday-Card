@@ -166,7 +166,7 @@ function revealCard(personName) {
 
       // Start the fade transition
       overlay.style.opacity = "0";
-
+      
       // After fade completes, hide overlay and show content
       setTimeout(() => {
         overlay.style.display = "none";
@@ -175,12 +175,12 @@ function revealCard(personName) {
         content.style.justifyContent = "center";
         content.style.alignItems = "center";
         content.style.opacity = "0";
-
+        
         // Fade in the content
         setTimeout(() => {
           content.style.opacity = "1";
         }, 50);
-
+        
         // Remove surprise-card class and styling
         card.classList.remove("surprise-card");
       }, 500); // Wait for fade out to complete

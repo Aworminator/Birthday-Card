@@ -96,13 +96,13 @@ function pauseAudio(personName) {
 people.forEach((person) => {
   const card = document.createElement("div");
   card.classList.add("card");
-
+  
   // Check if this is Jeremiah or Spencer for special surprise card
   if (person.name === "Jeremiah Grabau" || person.name === "Spencer Brenard") {
     card.classList.add("surprise-card");
     card.innerHTML = `
       <div class="surprise-overlay" onclick="revealCard('${person.name}')">
-        <h1 class="surprise-text">Click here for mystery person</h1>
+        <h1 class="surprise-text">Click here for a surprise guest</h1>
       </div>
       <div class="card-content" style="display: none;">
         <h1 id="name">${person.name}</h1>
@@ -128,7 +128,7 @@ people.forEach((person) => {
         </div>
       </div>`;
   }
-
+  
   input.appendChild(card);
 
   const audio = document.getElementById(`audio-${person.name}`);
@@ -157,33 +157,22 @@ function toggleAudio(personName) {
 
 function revealCard(personName) {
   // Find the card for this person
-  const cards = document.querySelectorAll(".surprise-card");
-  cards.forEach((card) => {
-    const nameElement = card.querySelector("#name");
+  const cards = document.querySelectorAll('.surprise-card');
+  cards.forEach(card => {
+    const nameElement = card.querySelector('#name');
     if (nameElement && nameElement.textContent === personName) {
-      const overlay = card.querySelector(".surprise-overlay");
-      const content = card.querySelector(".card-content");
-
-      // Start the fade transition
-      overlay.style.opacity = "0";
-
-      // After fade completes, hide overlay and show content
-      setTimeout(() => {
-        overlay.style.display = "none";
-        content.style.display = "flex";
-        content.style.flexDirection = "column";
-        content.style.justifyContent = "center";
-        content.style.alignItems = "center";
-        content.style.opacity = "0";
-
-        // Fade in the content
-        setTimeout(() => {
-          content.style.opacity = "1";
-        }, 50);
-
-        // Remove surprise-card class and styling
-        card.classList.remove("surprise-card");
-      }, 500); // Wait for fade out to complete
+      const overlay = card.querySelector('.surprise-overlay');
+      const content = card.querySelector('.card-content');
+      
+      // Hide overlay and show content
+      overlay.style.display = 'none';
+      content.style.display = 'flex';
+      content.style.flexDirection = 'column';
+      content.style.justifyContent = 'center';
+      content.style.alignItems = 'center';
+      
+      // Remove surprise-card class and styling
+      card.classList.remove('surprise-card');
     }
   });
 }
