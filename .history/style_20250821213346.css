@@ -1,0 +1,123 @@
+.card {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+  background-color: rgb(251, 251, 225);
+  border-radius: 20px;
+  box-shadow: 5px 10px;
+  margin: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+body {
+  background: url(./images/Confetti.avif);
+  z-index: -1;
+}
+
+h1 {
+  text-align: center;
+}
+
+#input {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-pic {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.fa-pause,
+.fa-play {
+  font-size: 2em;
+  position: relative;
+  right: 12px;
+}
+
+.fa-play:active {
+  font-size: 2em;
+  position: relative;
+  transform: scale(0.8);
+}
+
+.player {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px;
+}
+
+.progress-bar {
+  background-color: white;
+  border-radius: 40px;
+  color: black;
+  width: 150px;
+  height: 12px;
+  border: 1px solid rgb(221, 144, 99);
+}
+
+.progress {
+  background-color: rgb(244, 164, 117);
+  border-radius: 40px;
+  height: 100%;
+  width: 0%;
+}
+
+.group {
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  #input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Balloon styles */
+.balloon {
+  position: absolute;
+  bottom: -300px; /* start below screen */
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatUp linear forwards;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* starts at bottom of balloon */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px; /* string length */
+  background: rgba(0, 0, 0, 0.3); /* light gray string */
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}

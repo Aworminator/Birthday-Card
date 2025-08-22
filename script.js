@@ -2,37 +2,37 @@ let people = [
   {
     name: "Nicki Scally",
     picture: "./images/Nicole.jpg",
-    audioTitle: "perry-sound.mp3",
+    audioTitle: "Nicki.wav",
   },
   {
     name: "Zach Scally",
     picture: "./images/Zach.jpg",
-    audioTitle: "Zach.m4a",
+    audioTitle: "Zach.wav",
   },
   {
     name: "Alec Garnica",
     picture: "./images/Alec.jpg",
-    audioTitle: "Alec.m4a",
+    audioTitle: "Alec.wav",
   },
   {
     name: "John Oliver",
     picture: "./images/John.jpg",
-    audioTitle: "John.m4a",
+    audioTitle: "John.wav",
   },
   {
     name: "Kohlby Hassleman",
     picture: "./images/Kohlby.jpg",
-    audioTitle: "perry-sound.mp3",
+    audioTitle: "Kohlby.wav",
   },
   {
     name: "Tyler Moore",
     picture: "./images/Tyler.jpg",
-    audioTitle: "Tyler.m4a",
+    audioTitle: "Tyler.wav",
   },
   {
     name: "Jeremiah Grabau",
     picture: "./images/Jeremiah.jpeg",
-    audioTitle: "perry-sound.mp3",
+    audioTitle: "Jeremiah.wav",
   },
   {
     name: "Spencer Brenard",
