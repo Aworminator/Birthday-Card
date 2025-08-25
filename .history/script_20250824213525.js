@@ -30,15 +30,11 @@ let people = [
     audioTitle: "Tyler.wav",
   },
   {
-    name: "Spencer Brenard",
-    picture: "./images/Spencer.png",
-    audioTitle: "Spencer.mp3",
-  },
-  {
     name: "Jeremiah Grabau",
     picture: "./images/Jeremiah.jpeg",
     audioTitle: "Jeremiah.wav",
   },
+  
 ];
 
 let input = document.querySelector("#input");

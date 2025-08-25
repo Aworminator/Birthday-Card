@@ -32,13 +32,14 @@ let people = [
   {
     name: "Spencer Brenard",
     picture: "./images/Spencer.png",
-    audioTitle: "Spencer.mp3",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Jeremiah Grabau",
     picture: "./images/Jeremiah.jpeg",
     audioTitle: "Jeremiah.wav",
   },
+  
 ];
 
 let input = document.querySelector("#input");

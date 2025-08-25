@@ -32,7 +32,7 @@ let people = [
   {
     name: "Spencer Brenard",
     picture: "./images/Spencer.png",
-    audioTitle: "Spencer.mp3",
+    audioTitle: "perry-sound.mp3",
   },
   {
     name: "Jeremiah Grabau",
